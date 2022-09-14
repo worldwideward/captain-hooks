@@ -39,7 +39,7 @@ ORG_REPO=${ORG_REPO:-'thoughtworks/talisman'}
 # given the various symlinks, this script may be invoked as
 #     'pre-commit', 'pre-push', 'talisman_hook_script pre-commit' or 'talisman_hook_script pre-push'
 case "$NAME" in
-pre-commit* | pre-push* | talisman.sh) HOOKNAME="${NAME}" ;;
+pre-commit* | pre-push* ) HOOKNAME="${NAME}" ;;
 talisman_hook_script)
   if [[ $# -gt 0 && $1 =~ pre-push.* ]]; then
     HOOKNAME="pre-push"
